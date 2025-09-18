@@ -3,6 +3,8 @@ package config
 import (
 	"os"
 	"time"
+
+	"admira-etl/internal/constants"
 )
 
 type Config struct {
@@ -23,11 +25,11 @@ func Load() *Config {
 		CRMAPIURL:   getEnv("CRM_API_URL", ""),
 		SinkURL:     getEnv("SINK_URL", ""),
 		SinkSecret:  getEnv("SINK_SECRET", ""),
-		Port:        getEnv("PORT", "8080"),
-		LogLevel:    getEnv("LOG_LEVEL", "info"),
-		HTTPTimeout: 30 * time.Second,
-		MaxRetries:  3,
-		RetryDelay:  time.Second,
+		Port:        getEnv("PORT", constants.DefaultPort),
+		LogLevel:    getEnv("LOG_LEVEL", constants.DefaultLogLevel),
+		HTTPTimeout: constants.DefaultHTTPTimeout * time.Second,
+		MaxRetries:  constants.DefaultMaxRetries,
+		RetryDelay:  constants.DefaultRetryDelay * time.Second,
 	}
 }
 

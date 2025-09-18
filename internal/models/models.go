@@ -66,27 +66,27 @@ type TransformedData struct {
 
 // API Request/Response Models
 type IngestRequest struct {
-	Since string `form:"since"`
+	Since string `form:"since" binding:"omitempty,datetime=2006-01-02"`
 }
 
 type MetricsChannelRequest struct {
-	From    string `form:"from" binding:"required"`
-	To      string `form:"to" binding:"required"`
+	From    string `form:"from" binding:"required,datetime=2006-01-02"`
+	To      string `form:"to" binding:"required,datetime=2006-01-02"`
 	Channel string `form:"channel" binding:"required"`
-	Limit   int    `form:"limit"`
-	Offset  int    `form:"offset"`
+	Limit   int    `form:"limit" binding:"min=1,max=1000"`
+	Offset  int    `form:"offset" binding:"min=0"`
 }
 
 type MetricsFunnelRequest struct {
-	From        string `form:"from" binding:"required"`
-	To          string `form:"to" binding:"required"`
+	From        string `form:"from" binding:"required,datetime=2006-01-02"`
+	To          string `form:"to" binding:"required,datetime=2006-01-02"`
 	UTMCampaign string `form:"utm_campaign" binding:"required"`
-	Limit       int    `form:"limit"`
-	Offset      int    `form:"offset"`
+	Limit       int    `form:"limit" binding:"min=1,max=1000"`
+	Offset      int    `form:"offset" binding:"min=0"`
 }
 
 type ExportRequest struct {
-	Date string `form:"date" binding:"required"`
+	Date string `form:"date" binding:"required,datetime=2006-01-02"`
 }
 
 type HealthResponse struct {

@@ -155,7 +155,8 @@ func (s *Service) transformData(adsData *models.AdsData, crmData *models.CRMData
 			CPA:          metrics.CPA,
 			CVRLeadToOpp: metrics.CVRLeadToOpp,
 			CVROppToWon:  metrics.CVROppToWon,
-			ROAS:         metrics.ROAS,
+			
+			ROAS:        metrics.ROAS,
 		})
 	}
 
