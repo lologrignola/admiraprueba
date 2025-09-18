@@ -370,14 +370,6 @@ The service handles various error scenarios:
 3. Add corresponding tests
 4. Update API documentation
 
-## 📫 Submission
-
-- **Repository**: [GitHub Link] (replace with your actual repository URL)
-- **Live Demo**: Service running on localhost:8080
-- **Documentation**: Complete API documentation in this README
-- **Testing**: Comprehensive unit tests with coverage reporting
-- **Examples**: 3+ cURL examples provided above
-- **Limitations**: Detailed assumptions and limitations documented
 
 ## 📄 License
 
